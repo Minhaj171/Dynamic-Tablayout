@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class DynamicFragment extends Fragment {
+    String name;
 
     public static DynamicFragment newInstance() {
         return new DynamicFragment();
@@ -30,8 +31,13 @@ public class DynamicFragment extends Fragment {
     // initialise the categories
     private void initViews(View view) {
         TextView textView = view.findViewById(R.id.commonTextView);
-        assert getArguments() != null;
-        textView.setText(String.valueOf("Category :  " + getArguments().getInt("position")));
+        if(getArguments() != null){
+            textView.setText(String.valueOf("Category :  " + getArguments().getInt("position")));
+        }
+    }
+
+    public void setMediaId(String name) {
+        this.name = name;
     }
 
     @Override
