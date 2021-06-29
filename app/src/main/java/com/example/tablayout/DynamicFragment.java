@@ -14,9 +14,9 @@ import android.widget.TextView;
 public class DynamicFragment extends Fragment {
     String name;
 
-    public static DynamicFragment newInstance() {
-        return new DynamicFragment();
-    }
+//    public static DynamicFragment newInstance() {
+//        return new DynamicFragment();
+//    }
 
     // adding the layout with inflater
     @Override
@@ -24,20 +24,20 @@ public class DynamicFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dynamic, container, false);
-//        initViews(view);
+        initViews(view);
         return view;
     }
 
     // initialise the categories
-//    private void initViews(View view) {
-//        TextView textView = view.findViewById(R.id.commonTextView);
-//        if(getArguments() != null){
-//            textView.setText(String.valueOf("Category :  " + getArguments().getInt("position")));
-//        }
-//    }
+    private void initViews(View view) {
+        TextView textView = view.findViewById(R.id.commonTextView);
+        if(name != null){
+            textView.setText(String.valueOf(name));
+        }
+    }
 
     public void setMediaId(String tab) {
-        this.name = name;
+        this.name = tab;
     }
 
 //    @Override
