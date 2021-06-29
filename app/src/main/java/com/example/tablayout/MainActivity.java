@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        tabItems = getResources().getStringArray(R.array.tabItem);
 
 
     }
@@ -56,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setDynamicFragmentToTabLayout() {
-
+        tabItems = getResources().getStringArray(R.array.tabItem);
         // here we have given 10 as the tab number
         // you can give any number here
-//        for (String tab : tabItems) {
-//            // set the tab name as "Page: " + i
-//            mTabLayout.addTab(mTabLayout.newTab().setText(tab));
-//        }
+        for (String tab : tabItems) {
+            // set the tab name as "Page: " + i
+            mTabLayout.addTab(mTabLayout.newTab().setText(tab));
+        }
         DynamicFragmentAdapter mDynamicFragmentAdapter = new DynamicFragmentAdapter(getSupportFragmentManager(), mTabLayout.getTabCount());
         mDynamicFragmentAdapter.setAdapterAdditionals(mTabLayout, tabItems);
 

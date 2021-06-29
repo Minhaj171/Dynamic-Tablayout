@@ -24,53 +24,53 @@ public class DynamicFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dynamic, container, false);
-        initViews(view);
+//        initViews(view);
         return view;
     }
 
     // initialise the categories
-    private void initViews(View view) {
-        TextView textView = view.findViewById(R.id.commonTextView);
-        if(getArguments() != null){
-            textView.setText(String.valueOf("Category :  " + getArguments().getInt("position")));
-        }
-    }
+//    private void initViews(View view) {
+//        TextView textView = view.findViewById(R.id.commonTextView);
+//        if(getArguments() != null){
+//            textView.setText(String.valueOf("Category :  " + getArguments().getInt("position")));
+//        }
+//    }
 
-    public void setMediaId(String name) {
+    public void setMediaId(String tab) {
         this.name = name;
     }
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-    }
-
-    // pause function call
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    // resume function call
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    // stop when we close
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
-
-    // destroy the view
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        super.onAttach(context);
+//    }
+//
+//    // pause function call
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//    }
+//
+//    // resume function call
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//    }
+//
+//    // stop when we close
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//    }
+//
+//    // destroy the view
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//    }
+//
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//    }
 }
